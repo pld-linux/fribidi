@@ -35,7 +35,7 @@ package.
 Install fribidi-devel if you want to develop programs which will use
 fribidi.
 
-%description -l pl devel
+%description devel -l pl
 Pliki developerskie pozwalaj±ce na wykorzystywanie biblioteki fribidi
 w swoim oprogramowaniu.
 
@@ -48,7 +48,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static %{name} libraries.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne %{name}.
 
 %prep
@@ -61,7 +61,7 @@ aclocal
 autoheader
 autoconf
 automake -a -c
-%configure 
+%configure
 %{__make}
 
 %install
