@@ -15,7 +15,6 @@ Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	http://telia.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.pc
-Patch0:		%{name}-am_ac.patch
 URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -77,7 +76,6 @@ Biblioteki statyczne %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f acinclude.m4
