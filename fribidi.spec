@@ -16,11 +16,11 @@ Group(uk):	Б╕бл╕отеки
 Source0:	cvs://anonymous@cvs.fribidi.sourceforge.net:/cvsroot/fribidi/%{name}-%{snap}.tar.gz
 Source1:	%{name}.pc
 Patch0:		%{name}-am_ac.patch
+URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	glib2-devel >= 1.3.10
-URL:		http://fribi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
