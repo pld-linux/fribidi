@@ -1,46 +1,68 @@
+%define	snap	20011029
 Summary:	Library implementing the Unicode BiDi algorithm
+Summary(pl):	Biblioteka implementuj╠ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.1.14
+Version:	0.%{snap}
 Release:	1
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/%{name}-%{version}.tar.gz
-Patch0:		%{name}-0.1.12-glib2.patch
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
+Source0:	cvs://anonymous@cvs.fribidi.sourceforge.net:/cvsroot/fribidi/%{name}-%{snap}.tar.gz
+Patch0:		%{name}-am_ac.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	glib-devel >= 1.3.1
-URL:		http://imagic.weizmann.ac.il/~dov/freesw/FriBidi
+BuildRequires:	glib2-devel >= 1.3.10
+URL:		http://fribi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A Free Implementation of the Unicode BiDi algorithm.
 
+%description -l pl
+Implementacja algorytmu Unicde BiDi.
+
 %package devel
 Summary:	Library implementing the Unicode BiDi algorithm
+Summary(pl):	Implementacja algorytmu Unicode BiDi
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
-The fribidi-devel package includes the static libraries and header
-files for the fribidi package.
+The fribidi-devel package includes header files for the fribidi
+package.
 
 Install fribidi-devel if you want to develop programs which will use
 fribidi.
+
+%description -l pl devel
+Pliki developerskie pozwalaj╠ce na wykorzystywanie biblioteki fribidi
+w swoim oprogramowaniu.
 
 %package static
 Summary:	Static %{name} libraries
 Summary(pl):	Biblioteki statyczne %{name}
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -50,14 +72,16 @@ Static %{name} libraries.
 Biblioteki statyczne %{name}.
 
 %prep
-%setup -q
-%patch -p1
-
-libtoolize --force --copy
-autoconf
-automake
+%setup -q -n %{name}-%{snap}
+%patch0 -p1
 
 %build
+rm -f acinclude.m4
+libtoolize --force --copy
+aclocal
+autoheader
+autoconf
+automake -a -c
 %configure 
 %{__make}
 
@@ -66,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog NEWS README
+gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -84,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/fribidi-config
 %attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/fribidi
 
 %files static
