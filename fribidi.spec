@@ -14,6 +14,7 @@ Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	cvs://anonymous@cvs.fribidi.sourceforge.net:/cvsroot/fribidi/%{name}-%{snap}.tar.gz
+Source1:	%{name}.pc
 Patch0:		%{name}-am_ac.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -87,6 +88,9 @@ automake -a -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+
+install %{SOURCE1}	$RPM_BUILD_ROOT%{_pkgconfigdir}/%{name}.pc
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
@@ -110,6 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/fribidi
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
