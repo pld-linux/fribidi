@@ -2,8 +2,8 @@
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj╠ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.%{snap}
-Release:	1
+Version:	0.10.1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -13,14 +13,14 @@ Group(pl):	Biblioteki
 Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
-Source0:	cvs://anonymous@cvs.fribidi.sourceforge.net:/cvsroot/fribidi/%{name}-%{snap}.tar.gz
-Patch0:		%{name}-am_ac.patch
+Source0:	http://telia.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source1:	%{name}.pc
+URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	glib2-devel >= 1.3.10
-URL:		http://fribi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libfribidi0
 
 %description
 A Free Implementation of the Unicode BiDi algorithm.
@@ -40,6 +40,7 @@ Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
+Obsoletes:	libfribidi0-devel
 
 %description devel
 The fribidi-devel package includes header files for the fribidi
@@ -72,8 +73,7 @@ Static %{name} libraries.
 Biblioteki statyczne %{name}.
 
 %prep
-%setup -q -n %{name}-%{snap}
-%patch0 -p1
+%setup -q
 
 %build
 rm -f acinclude.m4
@@ -87,6 +87,9 @@ automake -a -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+
+install %{SOURCE1}	$RPM_BUILD_ROOT%{_pkgconfigdir}/%{name}.pc
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
@@ -110,6 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/fribidi
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
