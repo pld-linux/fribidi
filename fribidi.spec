@@ -11,6 +11,8 @@ Source0:	http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/fribidi-%{version}.tar
 
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://imagic.weizmann.ac.il/~dov/freesw/FriBidi
+## this spec is prepared for glib,gtk 2.0
+BuildRequires:	glib-devel >= 1.3.1
 
 %description
 A Free Implementation of the Unicode BiDi algorithm
@@ -53,6 +55,7 @@ automake
 
 %build
 CFLAGS="$RPM_OPT_FLAGS"; export CFLAGS
+GLIB_CONFIG="%{_bindir}/glib-config-2.0"; export GLIB_CONFIG
 %configure 
 %{__make}
 
@@ -70,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/fribidi
-%{_libdir}/libfribidi.so.*.*.*
+%attr(755,root,root) %{_libdir}/libfribidi.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
