@@ -2,12 +2,11 @@
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj±ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.10.1
-Release:	2
+Version:	0.10.4
+Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://telia.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-Source1:	%{name}.pc
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,7 +55,7 @@ Biblioteki statyczne %{name}.
 
 %build
 rm -f acinclude.m4
-libtoolize --force --copy
+%{__libtoolize}
 aclocal
 autoheader
 %{__autoconf}
@@ -66,13 +65,8 @@ autoheader
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
-
-install %{SOURCE1}	$RPM_BUILD_ROOT%{_pkgconfigdir}/%{name}.pc
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -82,12 +76,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/fribidi
 %attr(755,root,root) %{_libdir}/libfribidi.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
 %attr(755,root,root) %{_bindir}/fribidi-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
