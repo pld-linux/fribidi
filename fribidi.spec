@@ -40,7 +40,6 @@ Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
-Requires:	glib2-devel
 Obsoletes:	libfribidi0-devel
 
 %description devel
