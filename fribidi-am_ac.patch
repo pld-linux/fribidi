@@ -1,0 +1,12 @@
+diff -urN fribidi-20011029.org/Makefile.am fribidi-20011029/Makefile.am
+--- fribidi-20011029.org/Makefile.am	Mon Oct 29 16:53:33 2001
++++ fribidi-20011029/Makefile.am	Mon Oct 29 16:55:57 2001
+@@ -24,8 +24,6 @@
+ libfribidi_la_LIBADD = $(GLIB_LIBS)
+ 
+ libfribidiincdir = $(includedir)/fribidi
+-
+-libfribidiincdir = $(includedir)/fribidi
+ libfribidiinc_HEADERS =	\
+ 	fribidi.h	\
+ 	fribidi_types.h	\
