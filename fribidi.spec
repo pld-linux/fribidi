@@ -6,7 +6,7 @@ Version:	0.10.4
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
