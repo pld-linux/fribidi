@@ -3,7 +3,7 @@ Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj╠ca algorytm Unicode BiDi
 Name:		fribidi
 Version:	0.9.0.%{snap}
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -41,6 +41,7 @@ Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
+Requires:	glib2-devel
 
 %description devel
 The fribidi-devel package includes header files for the fribidi
