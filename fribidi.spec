@@ -54,10 +54,10 @@ Biblioteki statyczne %{name}.
 %setup -q
 
 %build
-rm -f acinclude.m4
+rm -f missing acinclude.m4
 %{__libtoolize}
-aclocal
-autoheader
+%{__aclocal}
+%{__autoheader}
 %{__autoconf}
 %{__automake}
 %configure
