@@ -2,8 +2,8 @@
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj±ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.9.0.%{snap}
-Release:	2
+Version:	0.10.0
+Release:	1
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -13,7 +13,7 @@ Group(pl):	Biblioteki
 Group(pt_BR):	Bibliotecas
 Group(ru):	‚…¬Ã…œ‘≈À…
 Group(uk):	‚¶¬Ã¶œ‘≈À…
-Source0:	cvs://anonymous@cvs.fribidi.sourceforge.net:/cvsroot/fribidi/%{name}-%{snap}.tar.gz
+Source0:	http://telia.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.pc
 Patch0:		%{name}-am_ac.patch
 URL:		http://fribi.sf.net/
@@ -74,7 +74,7 @@ Static %{name} libraries.
 Biblioteki statyczne %{name}.
 
 %prep
-%setup -q -n %{name}-%{snap}
+%setup -q
 %patch0 -p1
 
 %build
