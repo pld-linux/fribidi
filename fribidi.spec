@@ -19,7 +19,7 @@ Obsoletes:	libfribidi0
 A Free Implementation of the Unicode BiDi algorithm.
 
 %description -l pl
-Implementacja algorytmu Unicde BiDi.
+Implementacja algorytmu Unicode BiDi.
 
 %package devel
 Summary:	Library implementing the Unicode BiDi algorithm
