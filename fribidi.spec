@@ -2,7 +2,7 @@
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj±ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.10.0
+Version:	0.10.1
 Release:	1
 License:	LGPL
 Group:		Libraries
@@ -20,7 +20,7 @@ URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	glib2-devel >= 1.3.10
+BuildRequires:	glib2-devel >= 1.3.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libfribidi0
 
