@@ -6,8 +6,7 @@ License:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source0:	http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/fribidi-%{version}.tar.gz
-
-#Patch1:		fribidi-0.1.12-gtkbeta.patch
+Patch0:		fribidi-0.1.12-glib2.patch
 
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://imagic.weizmann.ac.il/~dov/freesw/FriBidi
@@ -46,7 +45,7 @@ Biblioteki statyczne %{name}.
 
 %prep
 %setup -q
-#%patch1 -p1 -b .gtkbeta
+%patch -p1
 
 # .gtkbeta patch changes Makefile.am
 libtoolize --force --copy
@@ -55,7 +54,7 @@ automake
 
 %build
 CFLAGS="$RPM_OPT_FLAGS"; export CFLAGS
-GLIB_CONFIG="%{_bindir}/glib-config-2.0"; export GLIB_CONFIG
+##GLIB_CONFIG="%{_bindir}/glib-config-2.0"; export GLIB_CONFIG
 %configure 
 %{__make}
 
