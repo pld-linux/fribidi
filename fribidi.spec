@@ -2,7 +2,7 @@
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl):	Biblioteka implementuj±ca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.%{snap}
+Version:	0.9.0.%{snap}
 Release:	1
 License:	LGPL
 Group:		Libraries
