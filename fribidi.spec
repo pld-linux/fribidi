@@ -7,6 +7,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	0f6e7ecca08e6e108dc06337f5b5cabf
 URL:		http://fribi.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
