@@ -22,6 +22,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	glib2-devel >= 1.3.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsletres:	libfribidi0
 
 %description
 A Free Implementation of the Unicode BiDi algorithm.
@@ -42,6 +43,7 @@ Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
+Obsletres:	libfribidi0-devel
 
 %description devel
 The fribidi-devel package includes header files for the fribidi
