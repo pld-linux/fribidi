@@ -59,8 +59,8 @@ rm -f acinclude.m4
 libtoolize --force --copy
 aclocal
 autoheader
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
