@@ -6,14 +6,14 @@ Version:	0.10.4
 Release:	2
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/fribidi/%{name}-%{version}.tar.bz2
 # Source0-md5:	0f6e7ecca08e6e108dc06337f5b5cabf
-URL:		http://fribi.sf.net/
+URL:		http://fribi.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libfribidi0
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A Free Implementation of the Unicode BiDi algorithm.
