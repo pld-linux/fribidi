@@ -1,6 +1,6 @@
 %define	snap	20011029
 Summary:	Library implementing the Unicode BiDi algorithm
-Summary(pl.UTF-8):   Biblioteka implementująca algorytm Unicode BiDi
+Summary(pl.UTF-8):	Biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
 Version:	0.10.4
 Release:	3
@@ -23,7 +23,7 @@ Implementacja algorytmu Unicode BiDi.
 
 %package devel
 Summary:	Library implementing the Unicode BiDi algorithm
-Summary(pl.UTF-8):   Implementacja algorytmu Unicode BiDi
+Summary(pl.UTF-8):	Implementacja algorytmu Unicode BiDi
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libfribidi0-devel
@@ -41,7 +41,7 @@ w swoim oprogramowaniu.
 
 %package static
 Summary:	Static %{name} libraries
-Summary(pl.UTF-8):   Biblioteki statyczne %{name}
+Summary(pl.UTF-8):	Biblioteki statyczne %{name}
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
