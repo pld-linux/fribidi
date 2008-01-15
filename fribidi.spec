@@ -1,14 +1,13 @@
-%define	snap	20011029
 Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	Biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.10.4
-Release:	3
+Version:	0.10.9
+Release:	0.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/fribidi/%{name}-%{version}.tar.bz2
-# Source0-md5:	0f6e7ecca08e6e108dc06337f5b5cabf
-URL:		http://fribi.sourceforge.net/
+Source0:	http://fribidi.org/download/%{name}-%{version}.tar.gz
+# Source0-md5:	647aee89079b056269ff0918dc1c6d28
+URL:		http://fribidi.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
