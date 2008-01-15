@@ -2,7 +2,7 @@ Summary:	Library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	Biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
 Version:	0.10.9
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://fribidi.org/download/%{name}-%{version}.tar.gz
