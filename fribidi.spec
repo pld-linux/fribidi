@@ -1,6 +1,3 @@
-# TODO:
-# - Deal with unpackaged man files
-#
 Summary:	GNU FriBidi - library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	GNU FriBidi - biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
