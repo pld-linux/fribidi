@@ -11,6 +11,7 @@ URL:		http://fribidi.freedesktop.org/
 BuildRequires:	autoconf >= 2.56
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 Obsoletes:	libfribidi0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
