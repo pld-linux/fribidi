@@ -10,9 +10,9 @@ Version:	0.19.7
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://fribidi.org/download/%{name}-%{version}.tar.bz2
+Source0:	https://fribidi.org/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	6c7e7cfdd39c908f7ac619351c1c5c23
-URL:		http://fribidi.freedesktop.org/
+URL:		https://fribidi.org/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11.1
 %{?with_glib:BuildRequires:	glib2-devel >= 1:2.4}
