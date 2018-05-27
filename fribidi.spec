@@ -1,24 +1,22 @@
 #
 # Conditional build:
-%bcond_without	glib		# Glib usage
 %bcond_without	static_libs	# static library
 #
 Summary:	GNU FriBidi - library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	GNU FriBidi - biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
-Version:	0.19.7
+Version:	1.0.3
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	https://fribidi.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	6c7e7cfdd39c908f7ac619351c1c5c23
+#Source0Download: https://github.com/fribidi/fribidi/releases
+Source0:	https://github.com/fribidi/fribidi/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	ad74503b4c88091544f19308f517d3fc
 URL:		https://fribidi.org/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11.1
-%{?with_glib:BuildRequires:	glib2-devel >= 1:2.4}
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
-%{?with_glib:Requires:	glib2 >= 1:2.4}
 Obsoletes:	libfribidi0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,7 +31,6 @@ Summary:	Header files for FriBidi library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki FriBidi
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_glib:Requires:	glib2-devel >= 1:2.4}
 Obsoletes:	libfribidi0-devel
 
 %description devel
@@ -61,14 +58,13 @@ Biblioteka statyczna FriBidi.
 
 %build
 %{__libtoolize}
-%{__aclocal}
-%{__autoheader}
+%{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	%{?with_static_libs:--enable-static} \
-	--with-glib%{!?with_glib:=no}
+	%{?with_static_libs:--enable-static}
 
 %{__make}
 
