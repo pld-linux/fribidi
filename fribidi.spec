@@ -5,13 +5,13 @@
 Summary:	GNU FriBidi - library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	GNU FriBidi - biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
-Version:	1.0.11
+Version:	1.0.12
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/fribidi/fribidi/releases
 Source0:	https://github.com/fribidi/fribidi/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	06bb29553bb0529fb38648185f2553b0
+# Source0-md5:	21185b398635a7fc0d3ff0a7578c4791
 URL:		https://fribidi.org/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11.1
@@ -19,7 +19,7 @@ BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Obsoletes:	libfribidi0
+Obsoletes:	libfribidi0 < 1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +33,7 @@ Summary:	Header files for FriBidi library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki FriBidi
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Obsoletes:	libfribidi0-devel
+Obsoletes:	libfribidi0-devel < 1
 
 %description devel
 The fribidi-devel package includes header files for the fribidi
