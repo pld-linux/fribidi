@@ -5,13 +5,13 @@
 Summary:	GNU FriBidi - library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	GNU FriBidi - biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
-Version:	1.0.12
+Version:	1.0.13
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/fribidi/fribidi/releases
 Source0:	https://github.com/fribidi/fribidi/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	21185b398635a7fc0d3ff0a7578c4791
+# Source0-md5:	49b17442e0d8fa2e97b5c898078f6f51
 URL:		https://fribidi.org/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11.1
