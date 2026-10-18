@@ -5,16 +5,17 @@
 Summary:	GNU FriBidi - library implementing the Unicode BiDi algorithm
 Summary(pl.UTF-8):	GNU FriBidi - biblioteka implementująca algorytm Unicode BiDi
 Name:		fribidi
-Version:	1.0.16
+Version:	1.0.17
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/fribidi/fribidi/releases
 Source0:	https://github.com/fribidi/fribidi/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	333ad150991097a627755b752b87f9ff
+# Source0-md5:	f86bb656ecfdee321b93a059734fc106
 URL:		https://fribidi.org/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11.1
+BuildRequires:	help2man
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -32,7 +33,7 @@ GNU FriBidi to wolnodostępna implementacja algorytmu Unicode BiDi.
 Summary:	Header files for FriBidi library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki FriBidi
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Obsoletes:	libfribidi0-devel < 1
 
 %description devel
@@ -47,7 +48,7 @@ fribidi w swoim oprogramowaniu.
 Summary:	Static FriBidi library
 Summary(pl.UTF-8):	Biblioteka statyczna FriBidi
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static FriBidi library.
@@ -89,12 +90,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/fribidi
-%attr(755,root,root) %{_libdir}/libfribidi.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libfribidi.so.0
+%{_libdir}/libfribidi.so.*.*.*
+%ghost %{_libdir}/libfribidi.so.0
+%{_mandir}/man1/fribidi.1*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libfribidi.so
+%{_libdir}/libfribidi.so
 %{_includedir}/fribidi
 %{_pkgconfigdir}/fribidi.pc
 %{_mandir}/man3/fribidi_*.3*
